@@ -11,10 +11,18 @@
     padding: 0;
     box-sizing: border-box;
   }
-
 </style>
 <body>
   <div id="root">
   </div>
+  <script>
+    // root선언
+    let root = document.getElementById('root');
+    // imgtag를 하나 만들고 imgsrc에 포켓몬 이미지 넣음
+    let creatimg = document.createElement('img')
+    creatimg.src = "pokemonimage.000101.png"
+    root.appendChild(creatimg);
+
+  </script>
 </body>
 </html>
