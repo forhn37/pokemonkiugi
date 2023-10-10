@@ -28,6 +28,7 @@
   <script>
     // root선언
     let root = document.getElementById('root');
+    // pokemonlist에 png값을 배열로 만듬
     let pokemonlist = 
     ["pokemonimage/000101.png",
     "pokemonimage/000401.png",
@@ -75,27 +76,25 @@
     let creatimg = document.createElement('img');
     creatimg.src = "pokemonimage/000101.png";
     root.appendChild(creatimg);
-
-    // 클릭시 5%씩 width하고 height가 커짐
-    // function count(num) {
-    //   return 50 * num;
-    // }
-    let y = 0;
+    // creatimg 클릭시 작용
     creatimg.addEventListener('click', function (event) {
-      // console.log(y);
+      // 이벤트 타겟 변수 지정
       let pokemonwidth = event.target;
-      // console.dir(pokemonwidth)
-      pokemonwidth.width += 50;
-      // pokemonwidth.height += 50;
+      // 콘솔로 width값 확인
       console.log(pokemonwidth.width)
+      // width값이 200씩 증가
+      pokemonwidth.width += 200;
+      // 랜덤함수로 인덱스 값을 정하려 count로 변수 지정
+      let count = Math.floor(Math.random()*(40-1)+1);
       // width가 1000이상이면 다른 포켓몬으로 교체되고 다시 width값이 300이 됨
       if(pokemonwidth.width > 1000) {
-        let count = Math.floor(Math.random()*40)+1
-        console.log(count);
+        // 랜덤함수가 이벤트클리너 밖에 있을 경우 호출이 안되기 때문에 조건문 안에 있어야함
+        // console.log(count);
+        // pokemonlist인덱스 값이 creating.src에 들어감
         creatimg.src = pokemonlist[count];
+        // pokemonwidth 300으로 다시 입력 
         pokemonwidth.width = 300;
       }
-      // event.target.style.height = "10px++";
     })
   </script>
 </body>
