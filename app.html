@@ -70,7 +70,8 @@
     "pokemonimage/081301.png", 
     "pokemonimage/083401.png",
   ]
-    // imgtag를 하나 만들고 imgsrc에 포켓몬 이미지 넣음
+    // console.log(pokemonlist[5]);
+  // imgtag를 하나 만들고 imgsrc에 포켓몬 이미지 넣음
     let creatimg = document.createElement('img');
     creatimg.src = "pokemonimage/000101.png";
     root.appendChild(creatimg);
@@ -79,19 +80,19 @@
     // function count(num) {
     //   return 50 * num;
     // }
+    let count = Math.floor(Math.random()*40)+1
     let y = 0;
     creatimg.addEventListener('click', function (event) {
       // console.log(y);
       let pokemonwidth = event.target;
       // console.dir(pokemonwidth)
       pokemonwidth.width += 50;
-      pokemonwidth.height += 50;
+      // pokemonwidth.height += 50;
       console.log(pokemonwidth.width)
       // width가 1000이상이면 다른 포켓몬으로 교체됨
       if(pokemonwidth.width > 1000) {
-        let count = Math.floor(Math.random()*40)+1
-        console.log(count);
-        creatimg.src = `pokemonlist[${count}]`
+        creatimg.src = `pokemonlist[${count}]`;
+        pokemonwidth.width = 300;
       }
       // event.target.style.height = "10px++";
     })
