@@ -72,6 +72,7 @@
   ]
     // imgtag를 하나 만들고 imgsrc에 포켓몬 이미지 넣음
     let creatimg = document.createElement('img');
+    creatimg.src = "pokemonimage/000101.png";
     root.appendChild(creatimg);
 
     // 클릭시 5%씩 width하고 height가 커짐
@@ -85,11 +86,12 @@
       console.dir(pokemonwidth)
       pokemonwidth.width += 50;
       pokemonwidth.height += 50;
+      console.log(pokemonwidth.width)
       if(pokemonwidth.width === 1000) {
         let count = Math.floor(Math.random()*40)+1
+        console.log(count);
         creatimg.src = `pokemonlist[${count}]`
       }
-      console.log(pokemonwidth.width)
       // event.target.style.height = "10px++";
     })
   </script>
