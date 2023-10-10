@@ -80,7 +80,6 @@
     // function count(num) {
     //   return 50 * num;
     // }
-    let count = Math.floor(Math.random()*40)+1
     let y = 0;
     creatimg.addEventListener('click', function (event) {
       // console.log(y);
@@ -89,9 +88,11 @@
       pokemonwidth.width += 50;
       // pokemonwidth.height += 50;
       console.log(pokemonwidth.width)
-      // width가 1000이상이면 다른 포켓몬으로 교체됨
+      // width가 1000이상이면 다른 포켓몬으로 교체되고 다시 width값이 300이 됨
       if(pokemonwidth.width > 1000) {
-        creatimg.src = `pokemonlist[${count}]`;
+        let count = Math.floor(Math.random()*40)+1
+        console.log(count);
+        creatimg.src = pokemonlist[count];
         pokemonwidth.width = 300;
       }
       // event.target.style.height = "10px++";
