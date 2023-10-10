@@ -11,6 +11,13 @@
     padding: 0;
     box-sizing: border-box;
   }
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
 </style>
 <body>
   <div id="root">
@@ -20,9 +27,16 @@
     let root = document.getElementById('root');
     // imgtag를 하나 만들고 imgsrc에 포켓몬 이미지 넣음
     let creatimg = document.createElement('img')
-    creatimg.src = "pokemonimage.000101.png"
+    creatimg.src = "pokemonimage/000101.png"
     root.appendChild(creatimg);
 
+    // 클릭시 5%씩 width하고 height가 커짐
+
+    creatimg.addEventListener('click', function(event) {
+      let pokemonwidth = event.target.style.width;
+      pokemonwidth 
+      // event.target.style.height = "10px++";
+    })
   </script>
 </body>
 </html>
