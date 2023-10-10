@@ -83,11 +83,12 @@
     creatimg.addEventListener('click', function (event) {
       // console.log(y);
       let pokemonwidth = event.target;
-      console.dir(pokemonwidth)
+      // console.dir(pokemonwidth)
       pokemonwidth.width += 50;
       pokemonwidth.height += 50;
       console.log(pokemonwidth.width)
-      if(pokemonwidth.width === 1000) {
+      // width가 1000이상이면 다른 포켓몬으로 교체됨
+      if(pokemonwidth.width > 1000) {
         let count = Math.floor(Math.random()*40)+1
         console.log(count);
         creatimg.src = `pokemonlist[${count}]`
