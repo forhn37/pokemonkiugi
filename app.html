@@ -96,6 +96,25 @@
         pokemonwidth.width = 300;
       }
     })
+    creatimg.addEventListener('auxclick', function (event) {
+      // 이벤트 타겟 변수 지정
+      let pokemonwidth = event.target;
+      // 콘솔로 width값 확인
+      console.log(pokemonwidth.width)
+      // width값이 200씩 증가
+      pokemonwidth.width -= 200;
+      // 랜덤함수로 인덱스 값을 정하려 count로 변수 지정
+      let count = Math.floor(Math.random()*(40-1)+1);
+      // width가 1000이상이면 다른 포켓몬으로 교체되고 다시 width값이 300이 됨
+      if(pokemonwidth.width < 100) {
+        // 랜덤함수가 이벤트클리너 밖에 있을 경우 호출이 안되기 때문에 조건문 안에 있어야함
+        // console.log(count);
+        // pokemonlist인덱스 값이 creating.src에 들어감
+        creatimg.src = pokemonlist[count];
+        // pokemonwidth 300으로 다시 입력 
+        pokemonwidth.width = 500;
+      }
+    })
   </script>
 </body>
 </html>
